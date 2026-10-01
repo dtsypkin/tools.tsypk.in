@@ -10,7 +10,7 @@
 * **Styling:** Tailwind CSS  
 * **Icons:** Lucide React (`lucide-react`)  
 * **PWA Integration:** `vite-plugin-pwa` (Workbox service worker)  
-* **Deployment & Hosting:** Cloudflare Pages (Free Tier)  
+* **Deployment & Hosting:** Cloudflare Workers Static Assets (Free Tier)  
 * **State Management:** React local state + `localStorage` for temporary persistence.  
 
 ### Cloudflare Workers Compatibility
@@ -25,6 +25,11 @@ updated. For example, on 2026-10-02 the setting is:
 This makes the project use the Workers runtime behavior current at that date. Update the date
 deliberately and test the build before deploying, rather than allowing an old compatibility date
 to remain unnoticed.
+
+This is a client-rendered Vite application. Its Workers configuration must use
+`assets.directory: "./dist"` and `assets.not_found_handling: "single-page-application"`.
+Do not configure a `main` entry point or create `src/index.ts`: static assets require no Worker
+script, and the SPA fallback serves `index.html` for direct visits to tool routes.
   
 ### Key Directory Structure  
 ```text  
