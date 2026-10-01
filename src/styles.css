@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme { --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif; }
+
+@layer base { * { box-sizing: border-box; } body { @apply m-0 bg-slate-50 text-slate-900 antialiased; } button, input, select { font: inherit; } button { -webkit-tap-highlight-color: transparent; } }
+@layer components {
+  .card { @apply rounded-2xl border border-slate-200 bg-white shadow-sm; }
+  .field { @apply h-12 w-full rounded-xl border border-slate-300 bg-white px-3 text-base outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-100; }
+  .icon-button { @apply grid size-12 place-items-center rounded-xl text-slate-700 transition hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-teal-400; }
+  .tag { @apply rounded-full bg-slate-100 px-2.5 py-1 text-xs font-medium text-slate-600; }
+  .best-badge { @apply mt-1 inline-block rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-bold text-emerald-800; }
+  .segmented { @apply grid grid-cols-2 rounded-xl bg-slate-100 p-1; }
+  .segmented button { @apply min-h-11 rounded-lg px-2 text-sm font-semibold text-slate-600 transition; }
+  .segmented .active { @apply bg-white text-teal-800 shadow-sm; }
+  .primary-button { @apply flex min-h-12 items-center justify-center gap-2 rounded-xl bg-teal-700 px-4 font-bold text-white transition hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-teal-400; }
+  .secondary-button { @apply flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-4 font-bold text-slate-700 transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-teal-400; }
+}
