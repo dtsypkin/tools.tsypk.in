@@ -12,6 +12,19 @@
 * **PWA Integration:** `vite-plugin-pwa` (Workbox service worker)  
 * **Deployment & Hosting:** Cloudflare Pages (Free Tier)  
 * **State Management:** React local state + `localStorage` for temporary persistence.  
+
+### Cloudflare Workers Compatibility
+For Cloudflare's Workers build/runtime configuration, keep the `compatibility_date` in
+`wrangler.jsonc` set to the current date when the configuration is created or intentionally
+updated. For example, on 2026-10-02 the setting is:
+
+```jsonc
+"compatibility_date": "2026-10-02",
+```
+
+This makes the project use the Workers runtime behavior current at that date. Update the date
+deliberately and test the build before deploying, rather than allowing an old compatibility date
+to remain unnoticed.
   
 ### Key Directory Structure  
 ```text  

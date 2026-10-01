@@ -1,7 +1,6 @@
 {
-  "name": "tools-tsypk-in",
-  "compatibility_date": "2026-10-01",
-  "assets": {
-    "directory": "./dist"  // ← your npm run build output folder
-  }
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "tools-tsypkin-in",
+  "pages_build_output_dir": "./dist",
+  "compatibility_date": "2026-10-02"
 }
