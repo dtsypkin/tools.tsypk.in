@@ -1,4 +1,4 @@
-import { ArrowLeft, ChevronDown, RotateCcw, Scale, Search, Trash2, Plus } from 'lucide-react'
+import { ArrowLeft, ChevronDown, Heart, RotateCcw, Scale, Search, Trash2, Plus } from 'lucide-react'
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { tools } from './config/tools.config'
 
@@ -44,7 +44,14 @@ function App() {
     : <Catalog onOpen={() => navigate('/tools/unit-price-comparator')} />
 }
 
-function Shell({ children }: { children: ReactNode }) { return <main className="mx-auto min-h-dvh max-w-4xl px-4 pb-28 pt-5 sm:px-6">{children}</main> }
+function Shell({ children }: { children: ReactNode }) {
+  return <main className="mx-auto flex min-h-dvh max-w-4xl flex-col px-4 pb-28 pt-5 sm:px-6">
+    {children}
+    <footer className="mt-auto pt-10 text-center text-sm text-slate-500">
+      <p className="inline-flex items-center gap-1.5">Made with <Heart className="size-4 fill-rose-500 text-rose-500" aria-label="love" /> in Kyiv <span aria-hidden="true">·</span> v0.1.1</p>
+    </footer>
+  </main>
+}
 
 function Catalog({ onOpen }: { onOpen: () => void }) {
   const [query, setQuery] = useState('')
