@@ -103,6 +103,24 @@ This tool helps shoppers compare products sold in different package sizes.
 - Items can be removed when more than two remain. Clearing returns to two empty cards and the large baseline.
 - Persist current items, baseline, and currency in `localStorage` so a comparison survives a locked screen or app switch.
 
+## Versioning and release policy
+
+- Every completed change set must increment the project version in `package.json` before merge, release, or deployment.
+- Use semantic versioning (`MAJOR.MINOR.PATCH`) and let the implementing agent decide the correct bump based on the scope of the change.
+- `PATCH` for backward-compatible fixes, small corrections, and non-breaking refinements.
+- `MINOR` for new features, tool additions, user-facing enhancements, and backward-compatible improvements.
+- `MAJOR` for breaking changes, removed functionality, incompatible route or API changes, or major architecture changes.
+- The version bump must be reflected in both `package.json` and [CHANGELOG.md](CHANGELOG.md).
+- A release is not considered complete until the version number and changelog entry match the final delivered scope.
+
+## Changelog maintenance
+
+- Keep [CHANGELOG.md](CHANGELOG.md) updated for every user-visible release.
+- Record changes under the current version using the sections `Added`, `Changed`, `Fixed`, and `Removed`.
+- Prefer plain-language summaries that describe the effect on users rather than raw commit messages.
+- Update the changelog before tagging, publishing, or deploying a new version.
+- If release automation is introduced later, it should require a changelog update for each release.
+
 ## Acceptance criteria
 
 1. `npm run build` completes without TypeScript errors.
